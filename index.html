@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- img slider start -->
+    <div class="slider">
+        <div class="slider-images">
+            <!-- radio buttons -->
+            <input type="radio" name="radio-btn" id="btn1">
+            <input type="radio" name="radio-btn" id="btn2">
+            <input type="radio" name="radio-btn" id="btn3">
+            <div class="image first">
+                <img src="./img/1.jpg" alt="">
+            </div>
+            <div class="image second">
+                <img src="./img/2.jpg" alt="">
+            </div>
+            <div class="image third">
+                <img src="./img/3.jpeg" alt="">
+            </div>
+
+            <!-- auto navigation -->
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+        </div>
+        <!-- manual navigation -->
+        <div class="nav-manual">
+            <label for="btn1" class="manual-btn"></label>
+            <label for="btn2" class="manual-btn"></label>
+            <label for="btn3" class="manual-btn"></label>
+        </div>
+    </div>
+    <!-- img slider end -->
+
+    <!-- js -->
+    <script type="text/javascript">
+    var counter = 1;
+        setInterval(function(){
+            document.getElementById('btn' + counter).checked = true;
+            counter++;
+            if(counter>3){
+                counter = 1;
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
